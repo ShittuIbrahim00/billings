@@ -11,12 +11,12 @@ app.use(express.json());
 app.use(cookieParser());
 connectDB();
 
-const corOption = {
-  origin: process.env.CLIENT_URL || ["http://localhost:5173"],
-  credential: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-};
-app.use(cors(corOption));
+// const corOption = {
+//   origin: process.env.CLIENT_URL || ["http://localhost:5173"],
+//   credential: true,
+//   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+// };
+app.use(cors());
 app.use("/api/v1", authRouter);
 
 const PORT = process.env.PORT || 5000;
